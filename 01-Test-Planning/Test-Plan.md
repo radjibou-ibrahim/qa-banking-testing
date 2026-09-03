@@ -84,43 +84,43 @@ The project also aims to demonstrate practical Manual QA skills in a realistic b
 
 The following functional areas are included in the test campaign:
 
-Customer Authentication
-Bank Manager Authentication
-Customer Dashboard
-Account Information
-Account Balance
-Transaction History
-Deposit
-Withdrawal
-Customer and Account Management
-Logout and Application Navigation
+1. Customer Authentication
+2. Bank Manager Authentication
+3. Customer Dashboard
+4. Account Information
+5. Account Balance
+6. Transaction History
+7. Deposit
+8. Withdrawal
+9. Customer and Account Management
+10. Logout and Application Navigation
 
 Testing will include:
 
-Functional Testing
-Positive Testing
-Negative Testing
-Boundary Value Analysis
-Equivalence Partitioning
-Data Validation Testing
-Integration-oriented functional checks between related UI functions
-Regression Testing of corrected defects
-Exploratory Testing
+1. Functional Testing
+2. Positive Testing
+3. Negative Testing
+4. Boundary Value Analysis
+5. Equivalence Partitioning
+6. Data Validation Testing
+7. Integration-oriented functional checks between related UI functions
+8. Regression Testing of corrected defects
+9. Exploratory Testing
 
 ### 4.2 Out of Scope
 
 The following areas are explicitly excluded from this project:
 
-API Testing
-SQL / Database Testing
-Test Automation
-Performance Testing
-Security Testing
-Mobile Application Testing
-Inter-account Fund Transfer
-Beneficiary Management
-Notifications
-Account Statements
+1. API Testing
+2. SQL / Database Testing
+3. Test Automation
+4. Performance Testing
+5. Security Testing
+6. Mobile Application Testing
+7. Inter-account Fund Transfer
+8. Beneficiary Management
+9. Notifications
+10. Account Statements
 
 These areas are excluded because they are either unavailable in the selected demo application or outside the objectives of this portfolio project.
 
@@ -339,7 +339,7 @@ The test scenarios will describe high-level conditions to be verified.
 
 ---
 
-## 10. Test Data Strategy
+## 9. Test Data Strategy
 The test data will include, where applicable:
 
 - customer accounts;
@@ -359,7 +359,7 @@ Actual account values observed during testing will be recorded accurately.
 
 ---
 
-## 11. Test Environment
+## 10. Test Environment
 
 Testing will be performed against the XYZ Bank demo web application.
 
@@ -376,7 +376,7 @@ The browser, operating system and relevant environment information will be recor
 
 ---
 
-## 12. Entry Criteria
+## 11. Entry Criteria
 
 Testing may begin when the following conditions are satisfied:
 
@@ -390,7 +390,7 @@ Testing may begin when the following conditions are satisfied:
 
   ---
   
-## 13. Exit Criteria
+## 12. Exit Criteria
 
 The test cycle may be considered complete when:
 
@@ -407,7 +407,7 @@ The exit criteria may be adjusted if significant blocking issues prevent complet
 
 ---
 
-## 14. Test Execution
+## 13. Test Execution
 
 Test execution will be performed manually.
 Each test case will receive one of the following statuses:
@@ -440,7 +440,7 @@ A test case is considered NOT RUN when:
 
 ---
 
-## 15. Defect Management
+## 14. Defect Management
 
 ```text
 Observation
@@ -481,7 +481,7 @@ Jira issue IDs will only be recorded after the issue is actually created in Jira
 
 ---
 
-## 16. Regression Testing
+## 15. Regression Testing
 
 Regression testing will be performed after confirmed defects have been fixed.
 
@@ -491,7 +491,7 @@ The objective is to verify that:
 - previously working functionality has not been negatively affected.
 Regression scope will be determined based on the affected functionality.
 
-## 17. Exploratory Testing
+## 16. Exploratory Testing
 
 Exploratory Testing will complement scripted functional testing.
 
@@ -513,7 +513,7 @@ Each session will define:
 
 ---
 
-## 18. Risk Assessment
+## 17. Risk Assessment
 
 | Risk                                          | Impact   | Probability | Mitigation                                                      |
 | --------------------------------------------- | -------- | ----------- | --------------------------------------------------------------- |
@@ -529,7 +529,7 @@ Each session will define:
 
 ---
 
-## 19. Traceability
+## 18. Traceability
 
 Traceability will be maintained throughout the project.
 ```text
@@ -563,7 +563,7 @@ The following ID conventions will be used:
 
 ---
 
-## 20. Test Evidence
+## 19. Test Evidence
 
 Evidence will be collected during actual test execution.
 
@@ -575,7 +575,7 @@ Evidence may include:
 - account balance before and after an operation;
 - Jira defect evidence.
 
-## 21. Deliverables
+## 20. Deliverables
 
 The project will produce the following deliverables:
 | Deliverable         | Location                                 |
@@ -593,7 +593,7 @@ The project will produce the following deliverables:
 
 ---
 
-## 22. Roles and Responsibilities
+## 21. Roles and Responsibilities
 
 This project is conducted as an individual QA portfolio project.
 
@@ -616,7 +616,7 @@ Responsibilities include:
 
 ---
 
-## 23. Test Schedule
+## 22. Test Schedule
 
 The project will be completed progressively through the following phases:
 | Phase | Activity                           |
@@ -635,7 +635,7 @@ The exact execution timeline may be adjusted according to the availability of th
 
 ---
 
-## 24. Test Completion Criteria
+## 23. Test Completion Criteria
 
 The project will be considered complete when the planned testing activities have been performed and documented.
 
@@ -653,7 +653,7 @@ The final project should provide evidence of:
 - final test reporting.
 
   
-## 25. Final QA Principle
+## 24. Final QA Principle
 
 The project follows an evidence-based testing approach.
 
