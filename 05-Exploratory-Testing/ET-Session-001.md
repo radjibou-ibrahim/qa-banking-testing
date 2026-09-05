@@ -14,6 +14,23 @@
 
 ---
 
+## Test Environment
+
+| Item | Details |
+|---|---|
+| Application | XYZ Bank |
+| Environment | Public Demo Web Application |
+| Application URL | https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login |
+| Test Type | Manual Exploratory Testing |
+| Platform | Web |
+| Browser | To be recorded during execution |
+| Browser Version | To be recorded during execution |
+| Operating System | To be recorded during execution |
+| Network | Internet connection |
+| Test Data | Application-provided and tester-created data |
+
+---
+
 ## 1. Exploratory Charter
 
 ### Objective
