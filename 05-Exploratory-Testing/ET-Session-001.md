@@ -1,37 +1,33 @@
 # Exploratory Testing Session 001 — Customer Banking Flow
 
-## Session Information
+## 1. Session Information
 
 | Field | Details |
 |---|---|
 | Session ID | ET-SESSION-001 |
 | Application | XYZ Bank |
 | Application Type | Web Banking Application |
-| Test Type | Exploratory Testing |
-| Area | Customer Banking Flow |
+| Test Type | Manual Exploratory Testing |
 | Tester | QA Manual Tester |
-| Status | Planned |
+| Status | Completed |
 
 ---
 
-## Test Environment
+## 2. Test Environment
 
 | Item | Details |
 |---|---|
 | Application | XYZ Bank |
 | Environment | Public Demo Web Application |
 | Application URL | https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login |
-| Test Type | Manual Exploratory Testing |
 | Platform | Web |
-| Browser | To be recorded during execution |
-| Browser Version | To be recorded during execution |
-| Operating System | To be recorded during execution |
+| Browser | chrome|
+| Browser Version | 152.0.7977.64 (iOS)|
 | Network | Internet connection |
-| Test Data | Application-provided and tester-created data |
 
 ---
 
-## 1. Exploratory Charter
+## 3. Exploratory Charter
 
 ### Objective
 
@@ -45,53 +41,38 @@ Explore the application from the perspective of an authenticated customer,
 starting from customer login and continuing through the main banking
 functions until logout.
 
-The exploration should focus on how the different customer functions
-work together rather than only verifying individual requirements.
+The exploration focuses on how the different customer functions work
+together rather than only verifying individual requirements.
 
 ---
 
-## 2. Scope
+# 4. Exploration Results
 
-The following areas will be explored:
+## Exploration 1 — Customer Login
 
-- Customer Login
-- Customer Dashboard
-- Account Selection
-- Account Information
-- Balance
-- Transactions
-- Deposit
-- Withdrawal
-- Navigation between customer functions
-- Logout
+### Actions
 
----
+- Select a registered customer
+- Log in
+- Observe login behavior after customer selection
+- Navigate after login
+- Return to the login area
+- Perform a repeated login attempt
 
-## 3. Exploration Areas
+### Observation
 
-### 3.1 Customer Login
+Navigation is smooth, and each opened page corresponds to the selected
+action. The authenticated customer corresponds to the selected customer.
 
-Explore:
+### Status
 
-- Selecting a registered customer
-- Logging in
-- Login behavior after customer selection
-- Navigation after login
-- Returning to the login area
-- Repeated login attempts
-
-Questions to consider:
-
-- Is the selected customer correctly identified?
-- Does the application always redirect to the correct dashboard?
-- Is any unexpected information displayed?
-- Does navigation behave consistently?
+**PASS**
 
 ---
 
-### 3.2 Customer Dashboard
+## Exploration 2 — Customer Dashboard
 
-Explore:
+### Actions
 
 - Customer name
 - Account selector
@@ -103,19 +84,20 @@ Explore:
 - Withdrawal button
 - Logout button
 
-Questions to consider:
+### Observation
 
-- Are all expected elements displayed?
-- Are the elements accessible?
-- Does the displayed information correspond to the selected account?
-- What happens when switching between accounts?
-- Does the dashboard remain consistent after performing an operation?
+All expected elements are displayed. The buttons are functional and are
+associated with their corresponding actions.
+
+### Status
+
+**PASS**
 
 ---
 
-### 3.3 Account Switching
+## Exploration 3 — Account Switching
 
-If the customer has more than one account, explore:
+### Actions
 
 1. Select the first account.
 2. Record the displayed Account Number, Balance, and Currency.
@@ -124,106 +106,77 @@ If the customer has more than one account, explore:
 5. Switch back to the first account.
 6. Verify whether the information remains consistent.
 
-Questions to consider:
+### Observation
 
-- Does the account information update immediately?
-- Does the balance correspond to the selected account?
-- Does the currency correspond to the selected account?
-- Is any information from the previous account incorrectly retained?
+The Account Number, Balance, Currency, and transaction information
+correspond to the selected account. The information is automatically
+updated when switching between accounts.
+
+### Status
+
+**PASS**
 
 ---
 
-### 3.4 Deposit
+## Exploration 4 — Deposit and Withdrawal
 
-Explore the Deposit functionality using different inputs.
+### Actions
 
-Test at least:
+The following input types were explored for deposit and withdrawal:
 
-- A normal positive amount
+- Normal positive amount
 - `0`
-- A negative amount
-- An empty value
-- A decimal value, if accepted by the field
-- A relatively large positive amount
+- Negative amount
+- Empty value
+- Decimal value
+- Relatively large positive amount
 
-For each input, observe:
+### Observation
 
-- Message displayed
-- Balance
-- Transaction history
-- Transaction type
-- Application behavior after returning to the dashboard
+The balance increases after a successful deposit and decreases after a
+successful withdrawal according to the transaction amount.
 
-Questions to consider:
+Invalid or unsupported inputs, including negative amounts, amounts
+exceeding the available balance, empty values, and decimal values where
+not accepted, are rejected. Appropriate validation or transaction
+messages are displayed depending on the input.
 
-- Is the transaction processed correctly?
-- Is the balance updated correctly?
-- Is a transaction recorded when expected?
-- Is an appropriate validation message displayed?
-- Does the application behave consistently for unusual values?
+### Status
+
+**PASS**
 
 ---
 
-### 3.5 Withdrawal
+## Exploration 5 — Transaction History
 
-Explore the Withdrawal functionality using different inputs.
+### Actions
 
-Test at least:
+- Open transaction history
+- Review existing transactions
+- Verify Date-Time
+- Verify Amount
+- Verify Transaction Type
+- Review Credit transactions
+- Review Debit transactions
+- Apply date filtering
+- Use Reset
+- Explore pagination
 
-- A valid amount below the available balance
-- An amount equal to the available balance
-- An amount greater than the available balance
-- `0`
-- A negative amount
-- An empty value
-- A decimal value, if accepted by the field
+### Observation
 
-For each input, observe:
+The transaction history is displayed correctly with the transaction date
+and time, amount, and transaction type. Date filtering is available, and
+the transaction history can be navigated using the available controls.
 
-- Message displayed
-- Balance
-- Transaction history
-- Transaction type
-- Application behavior after the operation
+### Status
 
-Questions to consider:
-
-- Is a valid withdrawal processed correctly?
-- Is an excessive withdrawal rejected?
-- Does the balance remain unchanged when the withdrawal is rejected?
-- Are invalid values prevented from creating transactions?
+**PASS**
 
 ---
 
-### 3.6 Transaction History
+## Exploration 6 — Navigation
 
-Explore:
-
-- Opening transaction history
-- Existing transactions
-- Date-Time
-- Amount
-- Transaction Type
-- Credit transactions
-- Debit transactions
-- Date filtering
-- Reset
-- Pagination
-
-Questions to consider:
-
-- Are newly created transactions displayed?
-- Are Credit and Debit transactions represented correctly?
-- Does filtering return the expected transactions?
-- Does Reset restore the expected state?
-- Does pagination behave correctly?
-- Is any transaction missing or duplicated?
-
----
-
-### 3.7 Navigation
-
-Explore navigation between:
+### Actions
 
 - Dashboard
 - Transactions
@@ -232,141 +185,128 @@ Explore navigation between:
 - Customer Login
 - Logout
 
-Questions to consider:
+### Observation
 
-- Can the customer navigate back and forth without unexpected behavior?
-- Is the correct account context maintained?
-- Are pages loaded correctly?
-- Does the application lose information unexpectedly?
+The customer can navigate between the available banking functions without
+unexpected behavior. The selected account context is correctly maintained
+during navigation.
+
+### Status
+
+**PASS**
 
 ---
 
-### 3.8 Logout
+## Exploration 7 — Logout and Session Behavior
 
-Explore:
+### Actions
 
 1. Log in as a customer.
 2. Navigate through several customer functions.
-3. Click Logout.
+3. Click **Logout**.
 4. Observe the resulting page.
-5. Attempt to access customer banking functions again through normal navigation.
+5. Attempt to access the customer dashboard again without logging in.
 
-Questions to consider:
+### Observation
 
-- Does the session end correctly?
-- Is the customer returned to the appropriate page?
-- Can the customer still access authenticated functions unexpectedly?
-- Is any previous customer information still displayed?
+After clicking **Logout**, the customer is returned to the appropriate
+page and the session ends correctly. The customer cannot access the
+banking dashboard without logging in again.
 
----
+### Status
 
-# 4. Observation Guidelines
-
-During the session, do not immediately classify an unexpected behavior
-as a defect.
-
-Use the following process:
-
-**Observation → Reproduction → Investigation → Expected vs Actual → Defect Decision**
-
-For every unexpected behavior, record:
-
-- What was tested?
-- What input was used?
-- What happened?
-- Can the behavior be reproduced?
-- What was expected?
-- What was actually observed?
-- Is the behavior really a defect?
+**PASS**
 
 ---
 
-# 5. Evidence
+## Additional Observation — Session Timeout
 
-Screenshots should be captured when they provide useful evidence.
+During the exploratory session, an automatic session timeout behavior was
+observed after a period of inactivity.
 
-Recommended evidence includes:
+The exact timeout duration was not measured during this session.
 
-- Unexpected messages
-- Validation behavior
-- Transaction results
-- Balance changes
-- Transaction history changes
-- Navigation problems
-- Unexpected application states
+### Status
 
-Evidence will be stored in:
+**Observation — Further Investigation**
+
+This behavior was not included in the predefined test cases and was
+therefore recorded as an exploratory observation.
+
+The exact inactivity timeout should be verified before documenting a
+specific duration.
+
+---
+
+# 5. Observation Summary
+
+| Exploration | Area | Result |
+|---|---|---|
+| Exploration 1 | Customer Login | PASS |
+| Exploration 2 | Customer Dashboard | PASS |
+| Exploration 3 | Account Switching | PASS |
+| Exploration 4 | Deposit & Withdrawal | PASS |
+| Exploration 5 | Transaction History | PASS |
+| Exploration 6 | Navigation | PASS |
+| Exploration 7 | Logout & Session Behavior | PASS |
+| Additional Observation | Session Timeout | Further Investigation |
+
+---
+
+# 6. Unexpected Behaviors
+
+No confirmed functional defects were identified during this exploratory
+session.
+
+An additional observation related to session timeout was identified and
+recorded for further investigation.
+
+---
+
+# 7. Defect Assessment
+
+No defect was created in the `04-Bug-Reports/` section based on the
+observations from this session.
+
+The session timeout behavior was not classified as a defect because no
+specific requirement defining the expected inactivity timeout was
+available.
+
+---
+
+# 8. Evidence
+
+Relevant screenshots and test evidence can be stored in:
 
 `06-Evidence/`
 
----
-
-# 6. Defect Handling
-
-If an unexpected behavior is identified:
-
-1. Reproduce the behavior.
-2. Verify whether it occurs consistently.
-3. Compare the actual behavior with the expected behavior.
-4. Determine whether it represents a defect.
-5. Record the observation.
-6. If confirmed, create a bug report in:
-
-`04-Bug-Reports/`
-
-Do not create a bug report based only on an assumption.
+Evidence should be referenced when it provides useful support for an
+observation or unexpected behavior.
 
 ---
 
-# 7. Session Notes
+# 9. Conclusion
 
-The following information should be recorded during the exploration:
+The main customer banking journey was explored, including authentication,
+dashboard navigation, account switching, deposits, withdrawals,
+transaction history, navigation, and logout.
 
-| ID | Area | Action / Input | Observation | Result | Evidence |
-|---|---|---|---|---|---|
-| OBS-001 | | | | | |
-| OBS-002 | | | | | |
-| OBS-003 | | | | | |
-| OBS-004 | | | | | |
-| OBS-005 | | | | | |
-| OBS-006 | | | | | |
-| OBS-007 | | | | | |
-| OBS-008 | | | | | |
+The explored functionalities behaved consistently with the expected
+customer banking workflow.
 
----
+No confirmed functional defects were identified during the session.
 
-# 8. Session Conclusion
-
-### Summary
-
-_To be completed after the exploratory session._
-
-### Areas Explored
-
-_To be completed after the exploratory session._
-
-### Unexpected Behaviors
-
-_To be completed after the exploratory session._
-
-### Confirmed Defects
-
-_To be completed after the exploratory session._
-
-### Risks / Observations
-
-_To be completed after the exploratory session._
-
-### Final Assessment
-
-_To be completed after the exploratory session._
+An additional observation concerning session inactivity was identified
+and should be investigated further if session timeout behavior is within
+the application's requirements or expected behavior.
 
 ---
 
-## Important Note
+## 10. QA Notes
 
-Exploratory testing results must be based on actual observations made
-during the session.
+Exploratory testing results are based on observations made during the
+session.
 
-No defect, result, or application behavior should be added to this report
-without evidence from the exploratory session.
+Unexpected behavior is not automatically considered a defect. Any
+potential defect should be reproduced and compared with the expected
+behavior before being documented as a confirmed defect.
